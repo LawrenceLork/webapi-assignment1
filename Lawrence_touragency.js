@@ -56,6 +56,7 @@ module.exports = {
         } else {
             console.log(`No tours with the destination '${destination}' found.`);
         }
+        
     },
 
     // Function to update Tour discription
@@ -98,22 +99,24 @@ module.exports = {
    console.log(`The total amount would be $${total}`);
     },
 };
+console.log("------------------------------------------------------------------");
 //added 3 Tour packages to the database
 module.exports.addTour("Kyoto Trip", "Japan", "800", "3 days", "Experience Kyoto's iconic sights, cuisine, and culture in three unforgettable days.");
 module.exports.addTour("Tokyo Trip", "Japan", "1000", "5 days", "Experience Tokyo's iconic sights, cuisine, and culture in five unforgettable days.");
 module.exports.addTour("Penang Trip", "Malaysia", "500", "4 days", "Experience Penang's iconic sights, cuisine, and culture in four unforgettable days.");
-
+console.log("------------------------------------------------------------------");
 module.exports.getAllTour(); // Display all the Tour that is available
-
+console.log("------------------------------------------------------------------");
 module.exports.findTourByName("Tokyo Trip"); // Display the details of the Tokyo Trip tour
 module.exports.findTourByName("Paris Trip"); // Display that the tour does not exist
-
+console.log("------------------------------------------------------------------");
 module.exports.findToursByDestination("Japan");   // Display all Tours to Japan
 module.exports.findToursByDestination("Malaysia") // Display all Tours to Malaysia
 module.exports.findToursByDestination("France");  // Display Tour to France does not exist
-
+console.log("------------------------------------------------------------------");
 module.exports.updateTourDescription("Tokyo Trip","Come to Tokyo and enjoy the amazing food here"); //Display Updated Description for the Tour
-
+console.log("------------------------------------------------------------------");
 module.exports.deleteTourByName("Kyoto Trip"); // Deletes Kyoto Trip Tour
-
+console.log("------------------------------------------------------------------");
 module.exports.bookTour("Tokyo Trip", 2);  // Display quantity of tour packages purchased and the total cost
+console.log("------------------------------------------------------------------");
