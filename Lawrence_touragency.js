@@ -44,10 +44,8 @@ module.exports = {
             console.log(`Tour with the name '${name}' does not exist.`);
         }
     },
-    // Function to find a specific tour by destination
     // Function to find all tours with a specific destination
-    findTourByDestination(destination) {
-    // Use filter to find all tours with the specified destination
+    findToursByDestination(destination) {
     const tours = database.filter(tour => tour.destination === destination);
     
         if (tours.length > 0) {
@@ -77,7 +75,7 @@ module.exports = {
         database[index] = updatedTour;
         
         console.log(`Tour '${tourName}' details updated successfully!`);
-        console.log(`Updated ${tourName}'s description to ${updatedDescription}`);
+        console.log(`Updated ${tourName}'s description to "${updatedDescription}"`);
     },
     // Function to delete tour by name
     deleteTourByName(name) {
@@ -100,21 +98,22 @@ module.exports = {
    console.log(`The total amount would be $${total}`);
     },
 };
-
+//added 3 Tour packages to the database
 module.exports.addTour("Kyoto Trip", "Japan", "800", "3 days", "Experience Kyoto's iconic sights, cuisine, and culture in three unforgettable days.");
 module.exports.addTour("Tokyo Trip", "Japan", "1000", "5 days", "Experience Tokyo's iconic sights, cuisine, and culture in five unforgettable days.");
 module.exports.addTour("Penang Trip", "Malaysia", "500", "4 days", "Experience Penang's iconic sights, cuisine, and culture in four unforgettable days.");
 
-module.exports.getAllTour();
+module.exports.getAllTour(); // Display all the Tour that is available
 
 module.exports.findTourByName("Tokyo Trip"); // Display the details of the Tokyo Trip tour
 module.exports.findTourByName("Paris Trip"); // Display that the tour does not exist
 
-module.exports.findTourByDestination("Japan"); //Display all Tour to Japan
-module.exports.findTourByDestination("France");//Display that tour to France does not exist
+module.exports.findToursByDestination("Japan");   // Display all Tours to Japan
+module.exports.findToursByDestination("Malaysia") // Display all Tours to Malaysia
+module.exports.findToursByDestination("France");  // Display Tour to France does not exist
 
-module.exports.updateTourDescription("Tokyo Trip","Come to Tokyo and enjoy the amazing food here");//Display Updated Description
+module.exports.updateTourDescription("Tokyo Trip","Come to Tokyo and enjoy the amazing food here"); //Display Updated Description for the Tour
 
-module.exports.deleteTourByName("Kyoto Trip");
+module.exports.deleteTourByName("Kyoto Trip"); // Deletes Kyoto Trip Tour
 
-module.exports.bookTour("Tokyo Trip", 2);
+module.exports.bookTour("Tokyo Trip", 2);  // Display quantity of tour packages purchased and the total cost
