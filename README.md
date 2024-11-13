@@ -1,12 +1,30 @@
-# Assignment 1
+# Assignment 1 (Tour Agency)
 
-You will only need one file, ie, your node module, for this assignment.
+## Get started
+1. Install Node.js
+2. Download/Copy the code in `Lawrence_touragency.js`
+3. Add it into an empty folder or file
 
-In this readme file, describe how to use your node module. It could be similar to **app.js** from Lab2, where you call some functions in your node module and display the output. Describe how to setup your node module, if any. Describe how to call the functions, what parameters required and so on.
 
-You can press **Ctrl+Shift+V** in this file in Visual Studio Code to see a live preview of the readme file.
+## Intructions
+1. Create a touragency.js into the folder
+2. Add `"const agency = require('./[filename].js');"` at the top of the file
+3. Tryout the functions by inputing the code below:
+```ruby
+module.exports.addTour("Tokyo Trip","Japan","800","3 days","Description");
+module.exports.getAllTour();
+module.exports.findTourByName("Tokyo Trip");
+module.exports.findToursByDestination("Japan");
+module.exports.updateTourDescription("Description 2");
+module.exports.bookTour("Tokyo Trip", 2);
+module.exports.deleteTourByName("Tokyo Trip");
+```
 
-For some tips in formatting text in readme file, refer to https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
-
-# References
-Provide the references that you have used to support your assignment. 
+# Functions
+* addTour(name, destination, budget, duration, description) `To add Tour Packages`
+* getAllTour() `To get all Tour Packages`
+* findTourByName(name) `To find Tour by name`
+* findToursByDestination(destination) `To find Tour by destination`
+* updateTourDescription(tourName, updatedDescription) `To update Tour's Description`
+* bookTour(tourName, qty) `To book Tour and find out the total price`
+* deleteTourByName(name) `To delete Tour by name`

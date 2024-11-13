@@ -3,7 +3,7 @@ let database = [];
 module.exports = {
     // Function to add a tour to the agency
     addTour(name, destination, budget, duration, description) {
-        // name.trim here removes any whitespace from both ends of a string to ensure the tourname is not empty
+        // Ensures the tour name is a valid input
         if (typeof name !== 'string' || name.trim() === "") {
             console.log("Invalid tour name. Tour name must be a string.");
             return;
