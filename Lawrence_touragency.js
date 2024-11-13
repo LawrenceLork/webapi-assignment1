@@ -3,12 +3,13 @@ let database = [];
 module.exports = {
     // Function to add a tour to the agency
     addTour(name, destination, budget, duration, description) {
+        // name.trim here removes any whitespace from both ends of a string to ensure the tourname is not empty
         if (typeof name !== 'string' || name.trim() === "") {
             console.log("Invalid tour name. Tour name must be a string.");
             return;
         }
         
-        // Check if a tour with the same name already exists
+        // Check if a tours with the same name already exists
         const existingTour = database.find(tour => tour.name === name);
         if (existingTour) {
             console.log(`Tour '${name}' already exists in the database.`);
@@ -72,7 +73,6 @@ module.exports = {
 
         // This line merges database[index] and updatedDetails
         const updatedTour = { ...database[index], ...updatedDescription };
-        // The selected movie will be overriden by the updatedDetails
         database[index] = updatedTour;
         
         console.log(`Tour '${tourName}' details updated successfully!`);
@@ -95,15 +95,17 @@ module.exports = {
     const tourCost = tour.budget;
     const total = tourCost * qty;
 
-   console.log(`You have purchased `+ qty  +` tour package for `+ tourName)
-   console.log(`The total amount would be $${total}`);
+    console.log(`You have purchased `+ qty  +` tour package for `+ tourName)
+    console.log(`The total amount would be $${total}`);
     },
+
 };
 console.log("------------------------------------------------------------------");
 //added 3 Tour packages to the database
 module.exports.addTour("Kyoto Trip", "Japan", "800", "3 days", "Experience Kyoto's iconic sights, cuisine, and culture in three unforgettable days.");
 module.exports.addTour("Tokyo Trip", "Japan", "1000", "5 days", "Experience Tokyo's iconic sights, cuisine, and culture in five unforgettable days.");
 module.exports.addTour("Penang Trip", "Malaysia", "500", "4 days", "Experience Penang's iconic sights, cuisine, and culture in four unforgettable days.");
+module.exports.addTour("");
 console.log("------------------------------------------------------------------");
 module.exports.getAllTour(); // Display all the Tour that is available
 console.log("------------------------------------------------------------------");
